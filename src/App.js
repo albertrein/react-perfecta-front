@@ -1,5 +1,8 @@
 import React from 'react';
 import Teste from './components/Teste';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
 
 function App() {
   return (
@@ -17,7 +20,11 @@ function App() {
           Learn React
         </a>
       </header>
-      <Teste />
+      <BrowserRouter>
+        <Switch>
+          <Route path="/sobre" exact="true" component={Teste} />
+        </Switch>      
+      </BrowserRouter>
     </div>
   );
 }
