@@ -1,6 +1,7 @@
 import React from 'react';
 import Teste from './components/Teste';
 import ReactDOM from 'react-dom';
+import "./style-main.css";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 
