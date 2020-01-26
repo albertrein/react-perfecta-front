@@ -22,7 +22,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route path="/sobre" exact="true" component={Teste} />
-          <Route path="/admin" exact="true" component={AdminPage} />
+          <Route path="/admin" component={AdminPage} />
         </Switch>      
       </BrowserRouter>
     </div>

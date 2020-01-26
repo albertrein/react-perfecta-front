@@ -7,12 +7,14 @@ import Admin from './components/Admin';
 export default class AdminPage extends Component{
     render(){
         return(
-        	<BrowserRouter>
-        		<Switch>
-        			<Route path="/admin/login" component={Login}/>
-        			<Route path="/admin" component={Admin}/>
-        		</Switch>
-        	</BrowserRouter>
+        	<div>Admin Component
+	        	<BrowserRouter>
+	        		<Switch>
+	        			<Route path="/admin/login" exact={true} component={Login}/>
+	        			<Route path="/admin/admin" exact={true} component={() => <Admin teste="guilherme" />} />
+	        		</Switch>
+	        	</BrowserRouter>
+        	</div>
         )
     }
 }
