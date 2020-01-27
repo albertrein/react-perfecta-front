@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './style/Login.css';
 
 export default class Login extends Component{
 	state = {
@@ -38,7 +39,7 @@ export default class Login extends Component{
 	render(){
 		return(
 			<div className="login-content">
-				<form id="login-form" onSubmit={this.form_submit_handler}>
+				<form id="login-form" className="login-form" onSubmit={this.form_submit_handler}>
 					<input type="text" onChange={e => this.setState({ login: e.target.value })} />
 					<input type="password" onChange={e => this.setState({ pass: e.target.value })} />
 					<button className="login-form-submit" type="submit">Entrar!</button>
