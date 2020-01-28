@@ -39,13 +39,14 @@ export default class Login extends Component{
 	render(){
 		return(
 			<div className="login-content">
+				<h1>Login</h1>
 				<form id="login-form" className="login-form" onSubmit={this.form_submit_handler}>
-					<input type="text" onChange={e => this.setState({ login: e.target.value })} />
-					<input type="password" onChange={e => this.setState({ pass: e.target.value })} />
+					<input type="text" placeholder="Login" onChange={e => this.setState({ login: e.target.value })} />
+					<input type="password" placeholder="Senha" onChange={e => this.setState({ pass: e.target.value })} />
 					<button className="login-form-submit" type="submit">Entrar!</button>
 				</form>
-				<p style={{display: 'none', color:'yellow'}} id='nullValue'>Você não Preenceu os campos!</p>
-				<p style={{display: 'none', color:'red'}} id='failLogin'>Credenciais Inválidas!</p>
+				<p style={{display: 'none'}} id='nullValue'>Você não Preencheu os campos!</p>
+				<p style={{display: 'none'}} id='failLogin'>Credenciais Inválidas!</p>
 			</div>
 		)
 	}

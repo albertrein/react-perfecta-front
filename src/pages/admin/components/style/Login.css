@@ -1,11 +1,19 @@
 .login-content{
     display: table;
     margin: 0 auto;
-    background-color: #d1d1d1;
+    background-color: #1e90ff;
 }
 .login-form{
     display: grid;
-    padding: 50px;
+    padding: 10px 50px 40px;
+}
+
+.login-content h1{
+    text-align: center;
+    font-family: sans-serif;
+    color: #ffffff;
+    padding-bottom: 15px;
+    border-bottom: solid 2px #e1e1e1;
 }
 
 .login-form input{
@@ -23,7 +31,7 @@
 
 .login-form button{
     margin: 2.3em auto 0;
-    background: #00ad45;
+    background: #ffe221;
     border: none;
     cursor: pointer;
     font-weight: 600;
@@ -33,7 +41,7 @@
     -ms-transition: 0.5s all;
     transition: 0.5s all;
     display: block;
-    color: #fff;
+    color: #000;
     padding: 14px 30px;
     -webkit-border-radius: 0;
     -o-border-radius: 0;
@@ -43,4 +51,21 @@
     font-size: 15px;
     letter-spacing: 2px;
     width: 100%;
+}
+.login-form button:hover{
+    box-shadow: 3px 3px 10px;   
+}
+
+#nullValue{
+    background-color: yellow;
+    text-align: center;
+    color: #000;
+    margin: 10px;
+    padding: 10px;
+}
+#failLogin{
+    background-color: #ff6464;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
 }
