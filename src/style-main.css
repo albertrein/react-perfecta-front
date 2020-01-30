@@ -1,1 +1,14 @@
-header{color: red;}
+*{margin: auto;}
+header{
+  color: #262f56;
+  background-color: #f1f1f1;
+  text-align: initial;
+  padding-top: 20px;
+  padding-left: 30px;
+  font-size: 50px;
+  padding-bottom: 20px;
+}
+header span.top-icon{
+  color: #f1f1f1;
+  background-color: #262f56;
+}
