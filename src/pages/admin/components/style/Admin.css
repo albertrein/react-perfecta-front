@@ -1,0 +1,6 @@
+.column{
+	height: 100%;
+	float: left;
+}
+.lateral-links{width: 20%; background-color: red}
+.content{width: 80%; background-color: green}
