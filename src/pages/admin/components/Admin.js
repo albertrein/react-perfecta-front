@@ -16,19 +16,18 @@ export default class Admin extends Component{
 	render(){
 		return(
 			<div id="container-admin">
-				<div class="column lateral-links">
-					<BrowserRouter>
-						<Link to="/admin">Página Inicial</Link>
-						<Link to="/admin/newcategorie">Nova Categoria</Link>
-						<Link to="/vaga">Nova Vaga</Link>
-					</BrowserRouter>
+				<div className="column lateral-links">
+					
+					<Link to="/admin">Página Inicial</Link>
+					<Link to="/admin/newcategorie">Nova Categoria</Link>
+					<Link to="/vaga">Nova Vaga</Link>
+					
 				</div>
-				<div class="column content">
+				<div className="column content">
 					<BrowserRouter>
-						<Switch>
-							<Route path="/admin" exact="true" component={General} />
-							<Route path="/admin/newcategorie" exact="true" component={CategoryForm} />
-							<Route path="/admin/newjob" component={CategoryForm} />
+						<Switch>							
+							<Route path="/admin/newjob"  component={CategoryForm} />
+							<Route path="/admin/newcategorie"  component={CategoryForm} />
 						</Switch>
 					</BrowserRouter>
 				</div>

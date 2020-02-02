@@ -13,7 +13,7 @@ function App() {
         <Link to="/admin"><h2>Acessar Login</h2></Link>
         <Switch>
           <Route path="/sobre" exact="true" component={Teste} />
-          <Route path="/admin" component={AdminPage} />
+          <Route path="/admin" exact="true" component={AdminPage} />
         </Switch>      
       </BrowserRouter>
     </div>
