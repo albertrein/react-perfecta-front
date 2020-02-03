@@ -21,7 +21,7 @@ export default class AdminPage extends Component{
 	        	<BrowserRouter>
 	        		<Switch>
 	        			<Route path="/admin/login" exact={true} component={Login}/>
-	        			<Route path="/admin/logged" component={Admin} />
+	        			<Route path="/admin/" component={Admin} />
 	        		</Switch>
 	        	</BrowserRouter>
         	</div>
