@@ -16,17 +16,14 @@ export default class Admin extends Component{
 				<div className="column lateral-links" style={{display:'grid'}}>
 					
 					<Link to="/admin">Página Inicial</Link>
-					<Link to="/admin/logged/newcategorie">Nova Categoria</Link>
-					<Link to="/admin/logged/newjob">Nova Vaga</Link>
+					<Link to="/admin/newcategorie">Nova Categoria</Link>
+					<Link to="/admin/newjob">Nova Vaga</Link>
 					
 				</div>
-				<div className="column content">
-					<BrowserRouter>
-						<Switch>							
-							<Route path="/admin/logged/newjob" component={JobForm} />
-							<Route path="/"  component={CategoryForm} />
-						</Switch>
-					</BrowserRouter>
+				<div className="column content">									
+					<Route path="/admin" exact component={General} />
+					<Route path="/admin/newjob" exact="true" component={JobForm} />
+					<Route path="/admin/newcategorie" exact="true" component={CategoryForm} />						
 				</div>
 			</div>
 		)
