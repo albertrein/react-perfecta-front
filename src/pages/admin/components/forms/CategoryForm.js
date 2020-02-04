@@ -6,7 +6,7 @@ export default class CategoryForm extends Component {
             <div className="insert-form-content">
                 <p className="title">Nova Categoria</p>
                 <form className="content-form">
-                    <input type="text" />
+                    <input placeholder="Título da Categoria ..." type="text" />
                     <button onClick="">Salvar!</button>
                 </form>
             </div>
@@ -14,3 +14,4 @@ export default class CategoryForm extends Component {
     }
     
 }
+ 
