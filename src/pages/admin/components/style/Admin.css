@@ -2,7 +2,18 @@
 	height: 100%;
 	float: left;
 }
-.lateral-links{width: 20%; background-color: red}
+.lateral-links{
+	width: 20%;
+	background-color: #3F51B5;
+}
+.lateral-links a{
+	text-decoration: none;
+    margin: 10px;
+    font-size: 31px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #ebefff;
+}
 .content{width: 80%; /*background-color: green*/}
 
 .insert-form-content{
@@ -14,10 +25,10 @@
 	font-size: 30px;
     text-align: center;
     font-weight: bold;
-    padding-bottom: 10%;
+    padding-bottom: 5%;
     color: #262f56;
 }
-.insert-form-content .content-form input{
+.insert-form-content .content-form input, .insert-form-content .content-form select{
   width: 100%;
   box-sizing: border-box;
   border: 2px solid #ccc;
@@ -27,8 +38,10 @@
   background-position: 10px 10px; 
   background-repeat: no-repeat;
   padding: 12px 20px 12px 40px;
+  margin: 5px;
 }
 .insert-form-content .content-form button{
+	width: 100%;
 	background-color: #4CAF50;
 	border: none;
 	color: white;
@@ -36,4 +49,6 @@
 	text-decoration: none;
 	margin: 4px 2px;
 	cursor: pointer;
+	margin-top: 15px;
+	font-size: 20px;
 }
