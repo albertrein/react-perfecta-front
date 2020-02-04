@@ -13,7 +13,7 @@ export default class Admin extends Component{
 	render(){
 		return(
 			<div id="container-admin">
-				<div className="column lateral-links" style={{display:'grid'}}>
+				<div className="column lateral-links">
 					
 					<Link to="/admin">Página Inicial</Link>
 					<Link to="/admin/newcategorie">Nova Categoria</Link>

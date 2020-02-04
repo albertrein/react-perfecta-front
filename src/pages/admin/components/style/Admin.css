@@ -5,6 +5,7 @@
 .lateral-links{
 	width: 20%;
 	background-color: #3F51B5;
+	display: grid;
 }
 .lateral-links a{
 	text-decoration: none;
