@@ -8,7 +8,6 @@ import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-      <h1>Página Inicial</h1>
       <BrowserRouter>
         <Link to="/admin"><h2>Acessar Login</h2></Link>
         <Switch>

@@ -17,7 +17,7 @@ export default class AdminPage extends Component{
 	}
     render(){
         return(
-        	<div>Admin Component
+        	<div>
 	        	<BrowserRouter>
 	        		<Switch>
 	        			<Route path="/admin/login" exact={true} component={Login}/>
