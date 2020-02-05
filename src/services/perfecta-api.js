@@ -11,16 +11,22 @@ class PerfectaAPI{
 	}
 
 	async setNewJob(){
-		
-
-		let out = await axios.post(this.urlBase + 'new/job/', {
+		let params = {
 			"jobCategory" : "Teste",
 			"jobTitle" : "Teste #1",
 			"jobDescription" : "Teste React Front #1"
-		});
+		};
+
+		let out = await axios.post(this.urlBase + 'new/job/', JSON.stringify(params));
 		//let out = await axios.post(this.urlBase + 'new/job/');
 		return out;
 	}
+
+	async getCategories(){}
+
+	async getJobByCategorie(){}
+
+	
 
 
 	teste(){console.log('teste',this.urlBase);}
