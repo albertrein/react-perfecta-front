@@ -3,6 +3,10 @@ import PerfectaApi from '../../../../services/perfecta-api';
 
 
 export default class JobForm extends Component {
+    constructor(){
+        let categories = PerfectaApi.getCategories();
+    }
+    
     async saveJob(){
         let out = await PerfectaApi.setNewJob();
         console.log(out);
