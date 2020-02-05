@@ -4,6 +4,7 @@ import PerfectaApi from '../../../../services/perfecta-api';
 
 export default class JobForm extends Component {
     constructor(){
+        super();
         let categories = PerfectaApi.getCategories();
     }
     
