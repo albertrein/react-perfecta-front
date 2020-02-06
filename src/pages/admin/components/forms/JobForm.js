@@ -8,23 +8,25 @@ export default class JobForm extends Component {
         let categories = PerfectaApi.getCategories();
     }
     
-    async saveJob(){
-        let out = await PerfectaApi.setNewJob();
-        console.log(out);
+    async saveJob(evt){
+        evt.preventDefault();
+        //let out = await PerfectaApi.setNewJob();
+        console.log('out',evt);
     }
 
     render(){
         return(
             <div className="insert-form-content">
                 <p className="title">Nova Vaga</p>
-                <div className="content-form">
-                    <input placeholder="Título da Vaga ..." type="text" />
-                    <input placeholder="Descrição da Vaga ..." type="text" />
+                <form className="content-form" onSubmit={this.saveJob}>
+                    <input id="title" placeholder="Título da Vaga ..." type="text" />
+                    <input id="desc" placeholder="Descrição da Vaga ..." type="text" />
                     <select placeholder="Categoria da Vaga ..." >
-                    	<option>Categoria 1</option>
+                    	<option></option>
+                        <option value="Teste">Teste</option>
                     </select>
-                    <button onClick={this.saveJob}>Salvar Vaga!</button>
-                </div>
+                    <button >Salvar Vaga!</button>
+                </form>
             </div>
         );
     }
