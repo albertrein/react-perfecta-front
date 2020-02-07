@@ -28,12 +28,15 @@ class PerfectaAPI{
 		return out;
 	}
 
-	async getCategories(){}
+	async getCategories(){
+		let apiCategoriesResult = await axios.get(this.urlBase + 'categorys');
+		return apiCategoriesResult;
+	}
 
-	async getJobByCategorie(){}
-
-	
-
+	async getJobByCategorie(categoryName){
+		let apiJobsResult = await axios.get(this.urlBase + 'category/jobs/' + categoryName);
+		return apiJobsResult;
+	}
 
 	teste(){console.log('teste',this.urlBase);}
 }
