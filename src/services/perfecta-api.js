@@ -2,8 +2,8 @@ import axios from 'axios';
 
 class PerfectaAPI{
 	//const atribute - url base
-	//urlBase = "http://localhost:3001/";
-	urlBase = "https://perfecta-api-node-firebase.herokuapp.com/";
+	urlBase = "http://localhost:3001/";
+	//urlBase = "https://perfecta-api-node-firebase.herokuapp.com/";
 	headers = {
 		'Accept': 'application/json',
         'Content-Type': 'application/json'
@@ -29,7 +29,9 @@ class PerfectaAPI{
 	}
 
 	async getCategories(){
-		let apiCategoriesResult = await axios.get(this.urlBase + 'categorys');
+		let apiCategoriesResult = await axios.get(this.urlBase + 'categorys', {
+			headers: this.headers
+		});
 		return apiCategoriesResult;
 	}
 
