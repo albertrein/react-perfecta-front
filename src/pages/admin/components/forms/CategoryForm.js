@@ -15,11 +15,6 @@ export default class CategoryForm extends Component {
         }
     }
 
-    async teste(){
-        let saida = await PerfectaApi.getCategories();
-        console.log(saida);
-    }
-
     render(){
         return(
             <div className="insert-form-content">
@@ -28,8 +23,6 @@ export default class CategoryForm extends Component {
                     <input placeholder="Título da Categoria ..." type="text" />
                     <button onClick={this.saveCategory}>Salvar Categoria!</button>
                 </div>
-                <br/><br/><br/><br/>
-                <button onClick={this.teste}>Teste Aqui!!!</button>
             </div>
         );
     }
