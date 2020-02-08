@@ -5,9 +5,21 @@ import PerfectaApi from '../../../../services/perfecta-api';
 export default class JobForm extends Component {
     constructor(){
         super();
-        let categories = PerfectaApi.getCategories();
+        this.state = {
+            arrayObject: []
+        }
     }
-    
+
+    async componentDidMount(){
+        let categoriesOfApi = await PerfectaApi.getCategories();
+        categoriesOfApi = Object.entries(categoriesOfApi.data)
+        
+        let arrayOfCategories = [];
+        categoriesOfApi.map( value => arrayOfCategories.push(value[1].category) );
+
+        this.setState({arrayObject: arrayOfCategories})
+    }
+
     async saveJob(evt){
         evt.preventDefault();
         //let out = await PerfectaApi.setNewJob();
@@ -21,9 +33,9 @@ export default class JobForm extends Component {
                 <form className="content-form" onSubmit={this.saveJob}>
                     <input id="title" placeholder="Título da Vaga ..." type="text" />
                     <input id="desc" placeholder="Descrição da Vaga ..." type="text" />
-                    <select placeholder="Categoria da Vaga ..." >
+                    <select id="select" placeholder="Categoria da Vaga ..." >
                     	<option></option>
-                        <option value="Teste">Teste</option>
+                        {this.state.arrayObject.map((value, i) => <option value={value} key={i}>{value}</option> )}
                     </select>
                     <button >Salvar Vaga!</button>
                 </form>
