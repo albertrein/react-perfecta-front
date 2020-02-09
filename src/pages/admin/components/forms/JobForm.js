@@ -6,9 +6,18 @@ export default class JobForm extends Component {
     constructor(){
         super();
         this.state = {
-            arrayObject: []
+            arrayObject: [],
+            jobTitle: '',
+            jobDesc: '',
+            jobCateg: '',
+            showFailMessage: "false"
         }
+
+        //Bind this object to functions
+        this.handlerChange = this.handlerChange.bind(this);
+        this.saveJob = this.saveJob.bind(this);
     }
+
 
     async componentDidMount(){
         let categoriesOfApi = await PerfectaApi.getCategories();
@@ -20,10 +29,30 @@ export default class JobForm extends Component {
         this.setState({arrayObject: arrayOfCategories})
     }
 
-    async saveJob(evt){
+    handlerChange = async (inputDataEvent) => {        
+        //setValue        
+        this.setState({
+            [inputDataEvent.target.name]: inputDataEvent.target.value
+        });
+    }
+
+    checkIsAvailableInput(data){
+        if(data == "" || data.length <= 1 || data.includes('#')){
+            return false;
+        }
+        return true;
+    }
+
+    saveJob = async (evt) => {
         evt.preventDefault();
-        //let out = await PerfectaApi.setNewJob();
-        console.log('out',evt);
+        if(!this.checkIsAvailableInput(this.state.jobTitle) || !this.checkIsAvailableInput(this.state.jobDesc) || !this.checkIsAvailableInput(this.state.jobCateg) ){
+            this.setState({showFailMessage: "true"});
+            return false;
+        }
+        this.setState({showFailMessage: "false"});
+        let out = await PerfectaApi.setNewJob(this.state.jobTitle, this.state.jobDesc, this.state.jobCateg);
+        
+        console.log('out',out);
     }
 
     render(){
@@ -31,14 +60,15 @@ export default class JobForm extends Component {
             <div className="insert-form-content">
                 <p className="title">Nova Vaga</p>
                 <form className="content-form" onSubmit={this.saveJob}>
-                    <input id="title" placeholder="Título da Vaga ..." type="text" />
-                    <input id="desc" placeholder="Descrição da Vaga ..." type="text" />
-                    <select id="select" placeholder="Categoria da Vaga ..." >
+                    <input name="jobTitle" placeholder="Título da Vaga ..." type="text" onChange={this.handlerChange} />
+                    <textarea name="jobDesc" placeholder="Descrição da Vaga ..." type="text" onChange={this.handlerChange} />
+                    <select name="jobCateg" placeholder="Categoria da Vaga ..." onChange={this.handlerChange} >
                     	<option></option>
                         {this.state.arrayObject.map((value, i) => <option value={value} key={i}>{value}</option> )}
                     </select>
-                    <button >Salvar Vaga!</button>
+                    <button id={this.state.availableToSubmit} onClick={this.saveJob}>Salvar Vaga!</button>
                 </form>
+                <p id={this.state.showFailMessage}>Campos não preenchidos corretamente!</p>
             </div>
         );
     }
