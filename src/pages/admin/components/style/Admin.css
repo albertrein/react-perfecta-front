@@ -30,7 +30,7 @@
     padding-bottom: 5%;
     color: #262f56;
 }
-.insert-form-content .content-form input, .insert-form-content .content-form select{
+.insert-form-content .content-form input, .insert-form-content .content-form select, .insert-form-content .content-form textarea{
   width: 100%;
   box-sizing: border-box;
   border: 2px solid #ccc;
@@ -54,3 +54,6 @@
 	margin-top: 15px;
 	font-size: 20px;
 }
+
+p#false{display: none;}
+p#true{display: block; color: #E84F5E;margin: 10px;}
