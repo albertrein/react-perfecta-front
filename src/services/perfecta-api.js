@@ -36,7 +36,9 @@ class PerfectaAPI{
 	}
 
 	async getJobByCategorie(categoryName){
-		let apiJobsResult = await axios.get(this.urlBase + 'category/jobs/' + categoryName);
+		let apiJobsResult = await axios.get(this.urlBase + 'category/jobs/' + categoryName, {
+			headers: this.headers
+		});
 		return apiJobsResult;
 	}
 
