@@ -3,10 +3,9 @@ import PerfectaApi from '../../../../services/perfecta-api';
 
 
 export default class JobForm extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
-            arrayObject: [],
             jobTitle: '',
             jobDesc: '',
             jobCateg: '',
@@ -16,17 +15,6 @@ export default class JobForm extends Component {
         //Bind this object to functions
         this.handlerChange = this.handlerChange.bind(this);
         this.saveJob = this.saveJob.bind(this);
-    }
-
-
-    async componentDidMount(){
-        let categoriesOfApi = await PerfectaApi.getCategories();
-        categoriesOfApi = Object.entries(categoriesOfApi.data)
-        
-        let arrayOfCategories = [];
-        categoriesOfApi.map( value => arrayOfCategories.push(value[1].category) );
-
-        this.setState({arrayObject: arrayOfCategories})
     }
 
     handlerChange = async (inputDataEvent) => {        
@@ -64,7 +52,7 @@ export default class JobForm extends Component {
                     <textarea name="jobDesc" placeholder="Descrição da Vaga ..." type="text" onChange={this.handlerChange} />
                     <select name="jobCateg" placeholder="Categoria da Vaga ..." onChange={this.handlerChange} >
                     	<option></option>
-                        {this.state.arrayObject.map((value, i) => <option value={value} key={i}>{value}</option> )}
+                        {this.props.arrayCategories.map((value, i) => <option value={value} key={i}>{value}</option> )}
                     </select>
                     <button id={this.state.availableToSubmit} onClick={this.saveJob}>Salvar Vaga!</button>
                 </form>
