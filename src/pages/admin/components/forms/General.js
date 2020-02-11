@@ -32,7 +32,10 @@ export default class General extends Component {
     	this.setState({"allJobs": arrayAll});
     }
 
-
+    /*temp1.map(v => {
+    	console.log(v.jobTitle)
+    	v.arrayJobs.map(vv => console.log(vv))
+	})*/
 
     /*async teste(categorieTitle){
     	let jobsByCategorie = await PerfectaApi.getJobByCategorie(categorieTitle);
