@@ -6,17 +6,35 @@ export default class General extends Component {
     constructor(props){
     	super(props);
     	this.state = {
-    		allJobs: []
+    		allJobs: [
+    			{jobTitle: "Gerenciamento"},
+				{jobTitle: "Teste"},
+				{jobTitle: "Marketing"},
+				{jobTitle: "teste"},
+				{jobTitle: "TI"},
+				{jobTitle: "qweqwe"}
+    		],
+    		teste1: ''
     	}
+    	this.teste = this.teste.bind(this);
     }
 
     async componentDidMount(){
+    	await this.teste();
+    	console.log('>',this.state.allJobs);
+    }
+
+    async teste(){
     	let arrayAll = [];
     	this.props.arrayCategories.map(async value => {
 	    	let out = await PerfectaApi.getJobByCategorie(value);
 	    	let object = {
 	    		jobTitle: '',
-	    		arrayJobs: []
+	    		arrayJobs: [
+	    			{ id: '1', age: 42 },
+        			{ id: '2', age: 33 },
+        			{ id: '3', age: 68 },
+	    		]
 	    	};
 
 	    	object.jobTitle = value;
@@ -29,7 +47,9 @@ export default class General extends Component {
 
 	    	arrayAll.push(object);
     	});
-    	this.setState({"allJobs": arrayAll});
+    	//console.log(arrayAll)
+    	//await this.setState({"allJobs": arrayAll});
+    	//this.setState({teste1: 'guilherme'});
     }
 
     /*temp1.map(v => {
@@ -53,8 +73,8 @@ export default class General extends Component {
         return(
             <div className="insert-form-content">
                 <h1>General</h1>
-                {this.props.arrayCategories.map((value, i) => <p key={i}>{value}</p>)}
-                {this.state.allJobs.map((val, i) => <a key={i}>{val.jobTitle}</a>)}
+                <p>{this.state.teste1}</p>
+                {this.state.allJobs.filter((vv) => <p key={vv.id}>{vv.age}</p>)}
             </div>
         );
     }
