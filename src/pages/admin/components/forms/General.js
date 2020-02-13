@@ -8,43 +8,34 @@ export default class General extends Component {
     	this.state = {
     		allJobs: [],
     		teste1: ''
-		}		
+		}
+		this.teste = this.teste.bind(this);
 	}
-	
-	componentDidMount(){
-		setTimeout(() => {
-			this.setState({
-				allJobs: [
-					{ id: '1', age: [{title: "t1"}, {title: "t2"}] },
-					{ id: '2', age: [{title: "t3"}, {title: "t4"}] },
-					{ id: '3', age: [{title: "t5"}, {title: "t6"}] }
-				]
-			});
-		}, 4000);
-		
+	async componentDidMount(){
+		await this.teste()
+		//console.log('V>',this.state.allJobs);
 	}
 
-/*	async componentDidMount(){
-    	let arrayAll = [];
-    	this.props.arrayCategories.map(async value => {
+	async teste(){
+    	await this.props.arrayCategories.map(async value => {
 	    	let out = await PerfectaApi.getJobByCategorie(value);
-	    	let object = {
-	    		jobTitle: '',
-	    		arrayJobs: []
+			
+			let object = {
+				id: '',
+				age: []
 	    	};
 
-	    	object.jobTitle = value;
+	    	object.id = value;
+			
+			Object.keys(out.data).map(job => object.age.push({title: job}) );
 
-	    	if(out.data === ""){
-	    		object.arrayJobs = [];	
-	    	}else{
-	    		object.arrayJobs = Object.keys(out.data);
-	    	}
+			let alljobs = this.state.allJobs;
+			alljobs.push(object);
 
-	    	arrayAll.push(object);
-    	});
-    	this.setState({"allJobs": arrayAll});
-    }*/
+			this.setState({allJobs: alljobs});
+	    	
+		});
+    }
 
 
     render(){
@@ -52,7 +43,7 @@ export default class General extends Component {
             <div className="insert-form-content">
                 <h1>General</h1>
                 {this.state.allJobs.map((vv) => {
-					return <p key={vv.id}>{vv.age.map((vvv) => <a key={vvv.title}>{vvv.title}</a> )}</p>
+				return <p key={vv.id}><span>{vv.id}</span>{vv.age.map((vvv) => <a key={vvv.title}>{vvv.title}</a> )}</p>
 				})}
             </div>
         );
