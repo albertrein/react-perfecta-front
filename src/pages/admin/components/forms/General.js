@@ -9,25 +9,24 @@ export default class General extends Component {
     		allJobs: [],
     		teste1: ''
 		}
-		this.teste = this.teste.bind(this);
+		this.getJobsByCategories = this.getJobsByCategories.bind(this);
 	}
 	async componentDidMount(){
-		await this.teste()
-		//console.log('V>',this.state.allJobs);
+		await this.getJobsByCategories()
 	}
 
-	async teste(){
+	async getJobsByCategories(){
     	await this.props.arrayCategories.map(async value => {
 	    	let out = await PerfectaApi.getJobByCategorie(value);
 			
 			let object = {
-				id: '',
-				age: []
+				category: '',
+				jobs: []
 	    	};
 
-	    	object.id = value;
+	    	object.category = value;
 			
-			Object.keys(out.data).map(job => object.age.push({title: job}) );
+			Object.keys(out.data).map(job => object.jobs.push({title: job}) );
 
 			let alljobs = this.state.allJobs;
 			alljobs.push(object);
@@ -43,7 +42,7 @@ export default class General extends Component {
             <div className="insert-form-content">
                 <h1>General</h1>
                 {this.state.allJobs.map((vv) => {
-				return <p key={vv.id}><span>{vv.id}</span>{vv.age.map((vvv) => <a key={vvv.title}>{vvv.title}</a> )}</p>
+				return <p key={vv.category}><span>{vv.category}</span>{vv.jobs.map((vvv) => <a key={vvv.title}>{vvv.title}</a> )}</p>
 				})}
             </div>
         );
