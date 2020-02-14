@@ -57,3 +57,6 @@
 
 p#false{display: none;}
 p#true{display: block; color: #E84F5E;margin: 10px;}
+
+#false{display: none;}
+#true{display: block;}

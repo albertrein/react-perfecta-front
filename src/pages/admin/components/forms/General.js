@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import PerfectaApi from '../../../../services/perfecta-api';
-
+import LoadingGif from '../../../../assets/loading/loading.gif'
 
 export default class General extends Component {
     constructor(props){
     	super(props);
     	this.state = {
     		allJobs: [],
-    		teste1: ''
+    		loading: 'true',
+    		showContent: 'false'
 		}
 		this.getJobsByCategories = this.getJobsByCategories.bind(this);
 	}
@@ -32,7 +33,8 @@ export default class General extends Component {
 			alljobs.push(object);
 
 			this.setState({allJobs: alljobs});
-	    	
+	    	this.setState({loading: 'false'});
+	    	this.setState({showContent: 'true'});
 		});
     }
 
@@ -40,10 +42,13 @@ export default class General extends Component {
     render(){
         return(
             <div className="insert-form-content">
-                <h1>General</h1>
-                {this.state.allJobs.map((vv) => {
-				return <p key={vv.category}><span>{vv.category}</span>{vv.jobs.map((vvv) => <a key={vvv.title}>{vvv.title}</a> )}</p>
-				})}
+            	<div id={this.state.loading}><img src={LoadingGif} /></div>
+                <div id={this.state.showContent}>
+                	<h1>General</h1>
+                	{this.state.allJobs.map((vv) => {
+					return <p key={vv.category}><span>{vv.category}</span>{vv.jobs.map((vvv) => <a key={vvv.title}>{vvv.title}</a> )}</p>
+					})}
+				</div>	
             </div>
         );
     }
