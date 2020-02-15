@@ -42,6 +42,20 @@ class PerfectaAPI{
 		return apiJobsResult;
 	}
 
+	async deleteCategorie(categoryName){
+		let apiJobsResult = await axios.delete(this.urlBase + 'delete/category/' + categoryName, {
+			headers: this.headers
+		});
+		return apiJobsResult;
+	}
+
+	async deleteJob(jobTitle){
+		let apiJobsResult = await axios.delete(this.urlBase + 'delete/job/' + jobTitle, {
+			headers: this.headers
+		});
+		return apiJobsResult;
+	}
+
 	teste(){console.log('teste',this.urlBase);}
 }
 
