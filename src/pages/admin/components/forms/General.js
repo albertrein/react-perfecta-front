@@ -46,7 +46,7 @@ export default class General extends Component {
                 <div id={this.state.showContent}>
                 	<h1>General</h1>
                 	{this.state.allJobs.map((vv) => {
-					return <p key={vv.category}><span>{vv.category}</span>{vv.jobs.map((vvv) => <a key={vvv.title}>{vvv.title}</a> )}</p>
+					return <div className="grid_data" key={vv.category}><span>{vv.category}</span>{vv.jobs.map((vvv) => <a key={vvv.title}>{vvv.title}<button>X</button></a> )}</div>
 					})}
 				</div>	
             </div>

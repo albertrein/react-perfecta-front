@@ -60,3 +60,33 @@ p#true{display: block; color: #E84F5E;margin: 10px;}
 
 #false{display: none;}
 #true{display: block;}
+
+.grid_data{
+	display: grid;
+    padding: 10px;
+}
+
+.grid_data span{
+	font-size: 25px;
+    font-weight: bold;
+}
+.grid_data a{
+	font-size: 20px;
+    font-weight: 100;
+    padding-left: 10px;
+    border: solid 1px #AAA;
+    margin: 5px;
+}
+
+.grid_data a button{
+	float: right;
+    border: none;
+    border-left: solid 1px #AAA;
+    padding: 5px 10px;
+    background: transparent;
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 15px;
+}
