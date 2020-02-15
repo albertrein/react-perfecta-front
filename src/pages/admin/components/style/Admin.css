@@ -69,6 +69,7 @@ p#true{display: block; color: #E84F5E;margin: 10px;}
 .grid_data span{
 	font-size: 25px;
     font-weight: bold;
+    border: solid;
 }
 .grid_data a{
 	font-size: 20px;
@@ -76,6 +77,20 @@ p#true{display: block; color: #E84F5E;margin: 10px;}
     padding-left: 10px;
     border: solid 1px #AAA;
     margin: 5px;
+    margin-left: 37px;
+}
+
+.grid_data span button {
+    float: left;
+    border: none;
+    border-right: solid 1px #AAA;
+    padding: 4px 11px;
+    background: transparent;
+    color: blue;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 10px;
 }
 
 .grid_data a button{
