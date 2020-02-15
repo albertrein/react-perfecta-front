@@ -11,7 +11,8 @@ export default class CategoryForm extends Component {
         //Implent here loading gif        
         let out = await PerfectaApi.setNewCategory(categorieTitle);
         if(out.data.OK === 'Sucess'){
-            alert('Saved!');
+            alert('Nova Categoria Registrada com Sucesso!');
+            window.location.reload();
         }
     }
 

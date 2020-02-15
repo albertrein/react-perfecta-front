@@ -41,6 +41,8 @@ export default class JobForm extends Component {
         let out = await PerfectaApi.setNewJob(this.state.jobTitle, this.state.jobDesc, this.state.jobCateg);
         
         console.log('out',out);
+        alert('Nova Vaga Registrada com Sucesso!');
+        window.location.reload();
     }
 
     render(){
