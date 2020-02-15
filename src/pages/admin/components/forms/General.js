@@ -11,6 +11,7 @@ export default class General extends Component {
     		showContent: 'false'
 		}
 		this.getJobsByCategories = this.getJobsByCategories.bind(this);
+		this.deleteJob = this.deleteJob.bind(this);
 	}
 	async componentDidMount(){
 		await this.getJobsByCategories()
@@ -38,8 +39,16 @@ export default class General extends Component {
 		});
     }
 
-    deleteCategorie(evt){console.log("Deletting categorie:",evt.target.name)}
-    deleteJob(evt){console.log("Deletting Job:",evt.target.name)}
+    async deleteCategorie(evt){
+    	console.log("Deletting categorie:",evt.target.name)
+		let out = await PerfectaApi.deleteCategorie(evt.target.name);
+    	window.location.reload();
+    }
+    async deleteJob(evt){
+    	console.log("Deletting Job:",evt);
+    	let out = await PerfectaApi.deleteJob(evt.target.name);
+    	window.location.reload();
+    }
 
     render(){
         return(
