@@ -15,7 +15,15 @@
     font-weight: bold;
     color: #ebefff;
 }
-.content{width: 80%; /*background-color: green*/}
+
+@media screen and (max-width: 760px) {
+	.lateral-links{
+		width: 100%;
+	}
+	.content{width: 100% !important; margin-bottom: 5%;}
+}
+
+.content{width: 80%;}
 
 .insert-form-content{
 	display: table;
