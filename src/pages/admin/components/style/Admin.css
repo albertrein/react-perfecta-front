@@ -21,6 +21,11 @@
 		width: 100%;
 	}
 	.content{width: 100% !important; margin-bottom: 5%;}
+	.insert-form-content .content-form input, .insert-form-content .content-form select, .insert-form-content .content-form textarea{
+		margin-top: 5px !important;
+    	margin-bottom: 5px !important;
+	}
+
 }
 
 .content{width: 80%;}
