@@ -53,7 +53,6 @@ export default class JobForm extends Component {
                     <input name="jobTitle" placeholder="Título da Vaga ..." type="text" onChange={this.handlerChange} />
                     <textarea name="jobDesc" placeholder="Descrição da Vaga ..." type="text" onChange={this.handlerChange} />
                     <select name="jobCateg" placeholder="Categoria da Vaga ..." onChange={this.handlerChange} >
-                    	<option></option>
                         {this.props.arrayCategories.map((value, i) => <option value={value} key={i}>{value}</option> )}
                     </select>
                     <button id={this.state.availableToSubmit} onClick={this.saveJob}>Salvar Vaga!</button>
