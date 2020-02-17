@@ -69,7 +69,8 @@ p#true{display: block; color: #E84F5E;margin: 10px;}
 .grid_data span{
 	font-size: 25px;
     font-weight: bold;
-    border: solid;
+    border: solid #d4d4d4;
+    border-radius: 5px;
 }
 .grid_data a{
 	font-size: 20px;
