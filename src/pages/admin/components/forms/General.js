@@ -41,12 +41,14 @@ export default class General extends Component {
 
     async deleteCategorie(evt){
     	console.log("Deletting categorie:",evt.target.name)
-		let out = await PerfectaApi.deleteCategorie(evt.target.name);
+		let apiReturn = await PerfectaApi.deleteCategorie(evt.target.name);
+    	console.log(apiReturn);
     	window.location.reload();
     }
     async deleteJob(evt){
     	console.log("Deletting Job:",evt);
-    	let out = await PerfectaApi.deleteJob(evt.target.name);
+    	let apiReturn = await PerfectaApi.deleteJob(evt.target.name);
+    	console.log(apiReturn);
     	window.location.reload();
     }
 
