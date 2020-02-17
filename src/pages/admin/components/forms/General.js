@@ -55,7 +55,7 @@ export default class General extends Component {
             <div className="insert-form-content">
             	<div id={this.state.loading}><img alt="Carregando" src={LoadingGif} /></div>
                 <div id={this.state.showContent}>
-                	<h1>General</h1>
+                	<h1>Listagem de Categorias e Vagas</h1>
                 	{this.state.allJobs.map((vv) => {
 					return <div className="grid_data" key={vv.category}><span>{vv.category}<button name={vv.category} onClick={this.deleteCategorie}>X</button></span>{vv.jobs.map((vvv) => <a key={vvv.title}>{vvv.title}<button name={vvv.title} onClick={this.deleteJob}>X</button></a> )}</div>
 					})}
