@@ -45,6 +45,7 @@
 }
 .insert-form-content .content-form input, .insert-form-content .content-form select, .insert-form-content .content-form textarea{
   width: 100%;
+  font-family: sans-serif;
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
