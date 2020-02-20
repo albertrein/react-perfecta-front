@@ -21,10 +21,8 @@
 		width: 100%;
 	}
 	.content{width: 100% !important; margin-bottom: 5%;}
-	.insert-form-content .content-form input, .insert-form-content .content-form select, .insert-form-content .content-form textarea{
-		margin-top: 5px !important;
-    	margin-bottom: 5px !important;
-	}
+	.insert-form-content .content-form input, .insert-form-content .content-form select, .insert-form-content .content-form textarea{margin: 5px 0 20px 0 !important; }
+	.insert-form-content .content-form button{margin: 0 !important;}
 
 }
 
