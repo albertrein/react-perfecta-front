@@ -4,7 +4,7 @@ import Banner01 from '../../../assets/uploads/banner-01.jpg';
 export default class Home extends Component{
 	render(){
 		return (
-			<section id="home" className="main-banner parallaxie" style={{backgroundImage: 'url(${Banner01})' }}>
+			<section id="home" className="main-banner parallaxie" style={{backgroundImage:`url(${Banner01})` }}>
 				<div className="heading">
 					<h1>Welcome to OnNext</h1>			
 					<h3 className="cd-headline clip is-full-width">
