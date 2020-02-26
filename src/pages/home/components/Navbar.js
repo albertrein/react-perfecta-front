@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Banner01 from '../../../assets/uploads/banner-01.jpg';
 import '../../../assets/style.css'
 
 export default class Navbar extends Component{
