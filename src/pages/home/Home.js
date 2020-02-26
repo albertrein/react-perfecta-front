@@ -1,12 +1,19 @@
 import React, {Component} from 'react';
-import Head from './components/Head';
+import Navbar from './components/Navbar';
+import Header from './components/Head';
+import About from './components/About';
+import Services from './components/Services';
 
 
 export default class Home extends Component{
 	render(){
 		return (
-			<Head />
-			//Here all future containers of components
+			<container>
+				<Navbar />
+				<Header />
+				<About />
+				<Services />
+			</container>
 		);
 	}
 }
