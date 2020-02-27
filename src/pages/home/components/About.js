@@ -2,10 +2,6 @@ import React, {Component} from 'react';
 import '../../../assets/style.css'
 import About04 from '../../../assets/uploads/about_04.jpg';
 
-import '../../../assets/css/bootstrap.min.css';
-import '../../../assets/css/responsive.css';
-import '../../../assets/css/custom.css';
-
 export default class About extends Component{
 	render(){
 		return (
