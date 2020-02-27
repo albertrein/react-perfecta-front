@@ -8,7 +8,7 @@ import Services from './components/Services';
 export default class Home extends Component{
 	render(){
 		return (
-			<div>
+			<div className="container-home">
 				<Navbar />
 				<Header />
 				<About />
