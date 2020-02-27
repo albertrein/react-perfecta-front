@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import '../../../assets/style.css'
+import '../../../assets/css/bootstrap.min.css';
+import '../../../assets/css/responsive.css';
+import '../../../assets/css/custom.css';
 
 export default class Services extends Component{
 	render(){
