@@ -8,7 +8,7 @@ import '../../../assets/css/custom.css';
 export default class Home extends Component{
 	render(){
 		return (
-			<section id="home" className="main-banner parallaxie" style={{backgroundImage:`url(${Banner01})` }}>
+			<section id="home" className="main-banner parallaxie" style={{background:`url(${Banner01})`+'center 0px / cover no-repeat fixed' }}>
 				<div className="heading">
 					<h1>Welcome to OnNext</h1>			
 					<h3 className="cd-headline clip is-full-width">
