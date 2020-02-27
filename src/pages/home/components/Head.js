@@ -8,7 +8,6 @@ import '../../../assets/css/custom.css';
 export default class Home extends Component{
 	render(){
 		return (
-			<div>
 			<section id="home" className="main-banner parallaxie" style={{backgroundImage:`url(${Banner01})` }}>
 				<div className="heading">
 					<h1>Welcome to OnNext</h1>			
@@ -26,7 +25,7 @@ export default class Home extends Component{
 						</div>
 					</h3>
 				</div>
-			</section></div>
+			</section>
 		)
 	}
 }

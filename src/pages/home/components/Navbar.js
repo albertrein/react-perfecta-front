@@ -7,7 +7,7 @@ import '../../../assets/css/custom.css';
 export default class Navbar extends Component{
 	render(){
 		return (
-			<div><nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+			<nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 				<div className="container">
 					<a className="navbar-brand js-scroll-trigger" href="#page-top">
 						<img className="img-fluid" src="images/logo.png" alt="" />
@@ -45,7 +45,7 @@ export default class Navbar extends Component{
 					</ul>
 					</div>
 				</div>
-				</nav></div>
+			</nav>
 		)
 	}
 }

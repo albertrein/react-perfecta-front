@@ -8,12 +8,12 @@ import Services from './components/Services';
 export default class Home extends Component{
 	render(){
 		return (
-			<container>
+			<div>
 				<Navbar />
 				<Header />
 				<About />
 				<Services />
-			</container>
+			</div>
 		);
 	}
 }
